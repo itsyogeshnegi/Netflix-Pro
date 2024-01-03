@@ -10,15 +10,17 @@ const Slider = () => {
   var tmdb = "https://api.themoviedb.org/3";
 
   var baseURL = "https://image.tmdb.org/t/p/original";
-
+  const fetchedData = async () => {
+    var myData = await axios.get(tmdb + requests.fetchNetflixOriginals);
+    setInfo(myData.data.results[Math.floor(Math.random() * 20)]);
+  };
   useEffect(() => {
-    setInterval(() => {
-      const fetchedData = async () => {
-        var myData = await axios.get(tmdb + requests.fetchNetflixOriginals);
-        setInfo(myData.data.results[Math.floor(Math.random() * 20)]);
-      };
+    fetchedData();
+    let interval = setInterval(() => {
       fetchedData();
     }, 8000);
+
+    return () => clearInterval(interval);
   }, []);
 
   return (
