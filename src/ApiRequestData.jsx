@@ -1,7 +1,18 @@
 const API_KEY = "01119e8533d38c65e3f92ff109a11b3b";
 
+const options = {
+    method: 'GET',
+    headers: {
+      accept: 'application/json',
+      Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIwMTExOWU4NTMzZDM4YzY1ZTNmOTJmZjEwOWExMWIzYiIsInN1YiI6IjYzNWJjMzQ3ODhjNjU5MDA4MjM3NTFkNyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.fKu3yG3flgCkd7spbbEBv7J6nTCWJ4GEc_nXO0jOdSQ'
+    }
+  };
+
 
 const requests = {
+    fetchSports:`/tv/sports?api_key=${API_KEY}&language=en-US&page=1${options}`,
+    fetchPopularTvShow:`/tv/on_the_air?api_key=${API_KEY}&language=en-US&page=1${options}`,
+    fetchBestOne: `/trending/movie/month?api_key=${API_KEY}&language=en-US${options}`,
     fetchTrending: `/trending/all/week?api_key=${API_KEY}&language=en-US&page=1`,
     fetchNetflixOriginals: `/discover/tv?api_key=${API_KEY}&with_networks=213`,
     fetchAnime: `/tv/animation?api_key=${API_KEY}&language=en-US`,

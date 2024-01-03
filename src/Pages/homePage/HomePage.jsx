@@ -6,8 +6,8 @@ const HomePage = () => {
   return (
     <div>
       <NavBar />
-      <Slider/>
-      <Show/>
+      <Slider />
+      <Show />
     </div>
   );
 };

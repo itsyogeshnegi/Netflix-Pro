@@ -6,7 +6,7 @@
     padding: 10px;
     position: fixed;
     flex-wrap: wrap;
-    z-index: 9;
+    z-index: 99999;
     transition: all 0.5s;
 }
 .nav__bar__shadow {
