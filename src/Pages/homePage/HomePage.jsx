@@ -5,7 +5,7 @@ import Show from "../../Component/ShowCards/Show";
 const HomePage = () => {
   return (
     <div>
-      {/* <NavBar /> */}
+      <NavBar />
       <Slider/>
       <Show/>
     </div>
