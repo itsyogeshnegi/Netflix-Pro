@@ -107,7 +107,7 @@ const Cards = ({ fetchURL, title }) => {
               backgroundImage: `url(${baseURL}${modalData?.backdrop_path})`,
               backgroundSize: "cover",
               backgroundRepeat: "no-repeat",
-              backgroundPosition: "center center",
+              backgroundPosition: "",
               height: "100vh",
             }}>
             <div className="modalMainBox">
@@ -126,7 +126,7 @@ const Cards = ({ fetchURL, title }) => {
                 </Button>
               </div>
  
-              <div className="modalOverView">{modalData.overview}</div>
+              <div className="modalOverViewData">{modalData.overview}</div>
               <div  className="modalOverView">
                 <h4>
                   <b>Release Date</b> :{" "}

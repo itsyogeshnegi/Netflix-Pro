@@ -90,6 +90,14 @@
     padding-left: 20px;
     padding-bottom: 20px;
 }
+.modalOverViewData{
+    font-size: 15px;
+    margin-top: 1rem;
+    text-align: left;
+    align-items: left;
+    margin-right: 50%;
+    text-align: justify;
+}
 .modalOverView{
     font-size: 20px;
     margin-top: 1rem;
