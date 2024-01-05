@@ -95,38 +95,48 @@ const Cards = ({ fetchURL, title }) => {
       <Modal
         show={show}
         onHide={handleClose}
-        size="lg"
+        size="xl"
         aria-labelledby="contained-modal-title-vcenter"
         centered>
-        {/* <Modal.Header className="dark-modal">
-          <Modal.Title>
-           <b>{modalData.title || modalData.original_name}</b> 
-          </Modal.Title>
-        </Modal.Header> */}
-        <Modal.Body className="dark-modal">
-          <div className="modalBackGroundImage">
-            <img
-              src={baseURL + modalData.backdrop_path}
-            />
-          </div>
-          <br/>
-          <div><h4><b>{modalData.title || modalData.original_name}</b></h4></div>
-          <div>
-            <b>Release Date</b> :{" "}
-            {modalData.release_date || modalData.first_air_date}
-          </div>
-          <div>
-            <b>Rating</b> : {modalData.vote_average} / <b>10</b>
-          </div>
-          <br />
-          <div>{modalData.overview}</div>
-          <div className="modalButtons">
-            <Button variant="danger" onClick={handleClose}>
-              Favourite <i className="fa-regular fa-heart"></i>
-            </Button>
-            <Button variant="info" onClick={handleClose}>
-              Add To List <i className="fa-solid fa-plus"></i>
-            </Button>
+        <Modal.Body
+          className="dark-modal"
+          style={{ padding: "0px", margin: "0px", zIndex: "99999999" }}>
+          <div
+            className="modalBackGroundImage"
+            style={{
+              backgroundImage: `url(${baseURL}${modalData?.backdrop_path})`,
+              backgroundSize: "cover",
+              backgroundRepeat: "no-repeat",
+              backgroundPosition: "center center",
+              height: "100vh",
+            }}>
+            <div className="modalMainBox">
+              <div>
+                <h2>
+                  <b>{modalData.title || modalData.original_name}</b>
+                </h2>
+              </div>
+              <div className="modalButtons">
+                <Button  onClick={handleClose} variant="danger">
+                  Favourite <i className="fa-regular fa-heart"></i>
+                </Button>
+                
+                <Button onClick={handleClose} style={{marginLeft:"10px"}}>
+                  Add To List <i className="fa-solid fa-plus"></i>
+                </Button>
+              </div>
+ 
+              <div className="modalOverView">{modalData.overview}</div>
+              <div  className="modalOverView">
+                <h4>
+                  <b>Release Date</b> :{" "}
+                  {modalData.release_date || modalData.first_air_date}
+                </h4>
+              </div>
+              <div>
+                <b>Rating</b> : {modalData.vote_average} / <b>10</b>
+              </div>
+            </div>
           </div>
         </Modal.Body>
       </Modal>

@@ -7,6 +7,7 @@
     overflow-x: scroll;
     overflow-y: hidden;
     /* display: flex; */
+    padding: 10px;
 }
 .dark-modal {
 
@@ -54,28 +55,48 @@
 .myCard {
     transition: 0.5s;
 }
+.modalMainBox{
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: start;
+    height: 100%;
+}
 
 .myCard:hover {
     transform: scale(1.1);
 }
 .modalButtons{
-    /* height: 50px; */
-    margin-top: 20px;
-    width: 100%;
+    /* margin: 10px; */
+    height: 40px;
+    width: 100px;
+    cursor: pointer;
+    color: white;
+    background-color: rgba(51, 51, 51, 0.9);
+    border: 0px;
+    font-weight: 700;
+    font-size: 17px;
     display: flex;
-    justify-content: space-between;
+
 }
 .modalBackGroundImage{
-    height: 280px;
+    height: 80%;
     width: 100%;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: end;
+    align-items: start;
+    background-position: center;
+    box-shadow: inset 0px 0px 300px 240px rgba(0, 0, 0, 0.80);
+    padding-left: 20px;
+    padding-bottom: 20px;
 }
-.modalBackGroundImage>img{
-    width: 80%;
-    height: 90%;
-    margin-top: 2rem;
+.modalOverView{
+    font-size: 20px;
+    margin-top: 1rem;
+    text-align: left;
+    align-items: left;
+    margin-right: 50%;
+    text-align: justify;
 }
 @media screen and (max-width: 750px) {
     .shortPosters {
@@ -83,3 +104,4 @@
         width: 50px;
     }
 }
+
