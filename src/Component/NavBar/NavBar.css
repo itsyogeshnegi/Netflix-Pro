@@ -13,13 +13,28 @@
     background-color: black;
     color: white;
 }
-
+.navHeads{
+display: flex;
+margin-left: 30px;
+padding-left: 20px;
+justify-content: center;
+align-items: center;
+}
+.navHeads>p{
+    padding: 10px;
+    color: white;
+}
 .nav__bar__shadow>i {
     color: white;
 }
 .Logonetflix{
     height: 100%;
+    display: flex;
 }
 .LogOutButton{
     height: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    width: 15%;
+    align-items: center;
 }
