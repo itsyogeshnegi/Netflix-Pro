@@ -4,11 +4,14 @@ import requests from "../../ApiRequestData";
 import axios from "axios";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
+import { useDispatch } from "react-redux";
+import { addCart } from "../../Store/cartSlice";
+import { Link } from "react-router-dom";
 const Slider = () => {
   const [info, setInfo] = useState([]);
 
   var tmdb = "https://api.themoviedb.org/3";
-
+  const dispatch = useDispatch();
   var baseURL = "https://image.tmdb.org/t/p/original";
   const fetchedData = async () => {
     var myData = await axios.get(tmdb + requests.fetchNetflixOriginals);
@@ -22,6 +25,12 @@ const Slider = () => {
 
     return () => clearInterval(interval);
   }, []);
+
+  const addTOCart = data => {
+    // setCart([...cart, data]);
+    dispatch(addCart(data));
+    toast.success("Add Your Movie...")
+  };
 
   return (
     <>
@@ -46,12 +55,14 @@ const Slider = () => {
             )}
           </h2>
           <div className="banner__buttons">
-            <button className="inside_button">
-              <i class="fa-solid fa-play"></i> Play
+            <button className="inside_button" onClick={() => addTOCart(info)}>
+              <i class="fa-solid fa-plus"></i> Add Cart
             </button>
-            <button className="inside_button">
-              <i class="fa-solid fa-list"></i> My List
-            </button>
+            <Link to="/cart">
+              <button className="inside_button">
+                <i class="fa-solid fa-list"></i> My List
+              </button>
+            </Link>
           </div>
 
           <div className="movie_overview">

@@ -1,20 +1,28 @@
 .Cart_box{
-    min-height: 600px;
+    min-height: 580px;
     width: 100%;
-    /* border: 2px red solid; */
     display: flex;
     flex-wrap: wrap;
     background-color: #252525;
-    justify-content: center;
-    align-items: center;
+    justify-content: start;
+    align-items: start;
 }
-
+.cartCount{
+    height: 20px;
+    width: 100%;
+    background-color: #252525;
+}
 .cart_Movies {
     height: 310px;
     width: 200px;
-    /* border: 2px blue solid; */
     display: flex;
-    transition: 0.6ms;
+    flex-direction: column;
     margin: 10px;
     color: white;
+}
+.removeItem{
+    background-color: red;
+    color: white;
+    border: none;
+    font-weight: 500;
 }
