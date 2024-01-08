@@ -1,7 +1,7 @@
-import React from 'react'
-import './Show.css'
-import Cards from '../Cards/Cards'
-import requests from '../../ApiRequestData'
+import React, { useState } from "react";
+import "./Show.css";
+import Cards from "../Cards/Cards";
+import requests from "../../ApiRequestData";
 const Show = () => {
   return (
     <div className="netflixbanner">
@@ -13,15 +13,15 @@ const Show = () => {
       <Cards title={"Popular"} fetchURL={requests.fetchPopular} />
       <Cards title={"Best Movies"} fetchURL={requests.fetchBestMovies} />
       <Cards title={"Kids Movies"} fetchURL={requests.fetchKids} />
-      <Cards title={"Drama"} fetchURL={requests.fetchDrama} />
+      {/* <Cards title={"Drama"} fetchURL={requests.fetchDrama} /> */}
       <Cards title={"sci-fi"} fetchURL={requests.fetchscifi} />
       <Cards title={"Theater"} fetchURL={requests.fetchTheater} />
       <Cards title={"Highest Rated"} fetchURL={requests.fetchHighest} />
       {/* <Cards title={"USA Movies"} fetchURL={requests.fetchUSA} /> */}
       <Cards title={"Comedy"} fetchURL={requests.fetchComedy} />
-      <Cards title={"Anime"} fetchURL={requests.fetchAnime} />
+      {/* <Cards title={"Anime"} fetchURL={requests.fetchAnime} /> */}
     </div>
   );
-}
+};
 
-export default Show
+export default Show;

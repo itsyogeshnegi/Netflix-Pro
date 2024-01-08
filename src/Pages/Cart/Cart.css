@@ -1,0 +1,20 @@
+.Cart_box{
+    min-height: 600px;
+    width: 100%;
+    /* border: 2px red solid; */
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #252525;
+    justify-content: center;
+    align-items: center;
+}
+
+.cart_Movies {
+    height: 310px;
+    width: 200px;
+    /* border: 2px blue solid; */
+    display: flex;
+    transition: 0.6ms;
+    margin: 10px;
+    color: white;
+}

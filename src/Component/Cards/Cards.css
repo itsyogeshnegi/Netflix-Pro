@@ -61,6 +61,7 @@
     justify-content: end;
     align-items: start;
     height: 100%;
+    width: 100%;
 }
 
 .myCard:hover {
@@ -86,7 +87,7 @@
     justify-content: end;
     align-items: start;
     background-position: center;
-    box-shadow: inset 0px 0px 300px 240px rgba(0, 0, 0, 0.80);
+    box-shadow: 0 0 40px rgba(255, 255, 255, 0.2), inset 0px 0px 300px 240px rgba(0, 0, 0, 0.60);
     padding-left: 20px;
     padding-bottom: 20px;
 }

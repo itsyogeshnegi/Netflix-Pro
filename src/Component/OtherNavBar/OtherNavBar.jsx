@@ -1,17 +1,9 @@
-import React, {useState} from 'react'
-import './NavBar.css'
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
-const NavBar = () => {
-  const [show, handleShow] = useState(false);
-  
-  window.addEventListener("scroll", () => {
-    if (window.scrollY > 100) {
-      handleShow(true);
-    } else handleShow(false);
-  });
-
+import "./OtherNavBar.css";
+const OtherNavBar = () => {
   return (
-    <div className={`nav_logo ${show && "nav__bar__shadow"}`}>
+    <div className={`nav_logos`}>
       <div className="Logonetflix">
         <Link to="/">
           <img src="/Logonetflix.png" height="90%" />
@@ -28,11 +20,11 @@ const NavBar = () => {
           <i
             class="fa-solid fa-cart-shopping"
             style={{ color: "white", fontSize: "24px" }}></i>
-        </Link> 
+        </Link>
         <img src="/user.png" height="90%" />
       </div>
     </div>
   );
 };
 
-export default NavBar
+export default OtherNavBar;

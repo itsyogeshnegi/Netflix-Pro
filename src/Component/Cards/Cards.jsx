@@ -5,12 +5,18 @@ import "react-loading-skeleton/dist/skeleton.css";
 import Skeleton from "react-loading-skeleton";
 import { Button, Modal } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { useDispatch } from "react-redux";
+import { addCart } from "../../Store/cartSlice";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 const Cards = ({ fetchURL, title }) => {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
+  const dispatch = useDispatch();
+  const [cart, setCart] = useState([]);
   const [movies, setMovies] = useState([]);
   const [modalData, setModalData] = useState({});
 
@@ -26,21 +32,27 @@ const Cards = ({ fetchURL, title }) => {
       } else {
         setMovies([]);
       }
-      console.log(movieData);
+      // console.log(movieData);
     };
 
     fetchedFile();
   }, [tmdb + fetchURL]);
 
   const showModalData = data => {
-    console.log(data);
+    // console.log(data);
     handleShow();
     let newData = JSON.parse(JSON.stringify(data));
     setModalData(newData);
   };
 
+  const addTOCart = data => {
+    // setCart([...cart, data]);
+    dispatch(addCart(data));
+    toast.success("Add Your Movie...")
+  };
+
   if (movies.length === 0) return;
-  console.log(baseURL, "hello:::::::");
+  // console.log(baseURL, "hello:::::::");
 
   return (
     <>
@@ -95,7 +107,7 @@ const Cards = ({ fetchURL, title }) => {
       <Modal
         show={show}
         onHide={handleClose}
-        size="lg"
+        size="xl"
         aria-labelledby="contained-modal-title-vcenter"
         centered>
         <Modal.Body
@@ -108,7 +120,7 @@ const Cards = ({ fetchURL, title }) => {
               backgroundSize: "cover",
               backgroundRepeat: "no-repeat",
               backgroundPosition: "",
-              height: "100vh",
+              height: "90vh",
             }}>
             <div className="modalMainBox">
               <div>
@@ -117,17 +129,19 @@ const Cards = ({ fetchURL, title }) => {
                 </h2>
               </div>
               <div className="modalButtons">
-                <Button  onClick={handleClose} variant="danger">
+                <Button onClick={handleClose} variant="danger">
                   Favourite <i className="fa-regular fa-heart"></i>
                 </Button>
-                
-                <Button onClick={handleClose} style={{marginLeft:"10px"}}>
+
+                <Button
+                  onClick={() => addTOCart(modalData)}
+                  style={{ marginLeft: "10px" }}>
                   Add To List <i className="fa-solid fa-plus"></i>
                 </Button>
               </div>
- 
+
               <div className="modalOverViewData">{modalData.overview}</div>
-              <div  className="modalOverView">
+              <div className="modalOverView">
                 <h4>
                   <b>Release Date</b> :{" "}
                   {modalData.release_date || modalData.first_air_date}
@@ -140,6 +154,14 @@ const Cards = ({ fetchURL, title }) => {
           </div>
         </Modal.Body>
       </Modal>
+      <ToastContainer
+        position="top-right"
+        autoClose={1500}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        theme="dark"
+      />
     </>
   );
 };
