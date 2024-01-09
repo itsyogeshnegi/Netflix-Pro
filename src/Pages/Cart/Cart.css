@@ -4,7 +4,7 @@
     display: flex;
     flex-wrap: wrap;
     background-color: #252525;
-    justify-content: start;
+    justify-content: center;
     align-items: start;
 }
 .cartCount{

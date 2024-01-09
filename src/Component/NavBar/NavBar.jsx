@@ -19,17 +19,27 @@ const NavBar = () => {
         </Link>
       </div>
       <div className="LogOutButton">
-        <i
+        {/* <i
           style={{ color: "white", fontSize: "20px" }}
-          class="fa-solid fa-magnifying-glass"></i>
-        <i
-          style={{ color: "white", fontSize: "20px" }}
-          class="fa-regular fa-heart"></i>
-        <Link to="/Cart">
-          <i
-            class="fa-solid fa-cart-shopping"
-            style={{ color: "white", fontSize: "20px" }}>{cartCount.length}</i>
-        </Link> 
+          class="fa-solid fa-magnifying-glass"></i> */}
+        {/* <div className="carts">
+          <Link>
+            <div className="lengthCart">{cartCount.length}</div>
+            <i
+              style={{ color: "white", fontSize: "20px" }}
+              class="fa-regular fa-heart"></i>
+          </Link>
+        </div> */}
+
+        <div className="carts">
+          <Link to="/Cart">
+            <div className="lengthCart">{cartCount.length}</div>
+            <i
+              class="fa-solid fa-cart-shopping"
+              style={{ color: "white", fontSize: "20px" }}></i>
+          </Link>
+        </div>
+
         <img src="/user.png" height="90%" />
       </div>
     </div>
