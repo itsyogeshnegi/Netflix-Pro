@@ -50,3 +50,27 @@ align-items: center;
     margin-bottom: 5px;
     margin-left: 1rem;
 }
+.listBtn{
+ width: 40px;
+ border: none;
+outline: none;
+position: relative;
+cursor: pointer;
+background-color: transparent;
+}
+.listBtn::before{
+    content: attr(data-count);
+    position: absolute;
+    top: -10px;
+    right: -5px;
+    background-color: red;
+    border-radius: 50%;
+    color: white;
+    height: 20px;
+    width: 20px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+}

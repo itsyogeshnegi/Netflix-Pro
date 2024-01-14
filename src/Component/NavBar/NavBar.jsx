@@ -5,6 +5,7 @@ import { useSelector } from 'react-redux';
 const NavBar = () => {
   const [show, handleShow] = useState(false);
   const cartCount = useSelector((state) => state.cart);
+  const favCount = useSelector(state => state.fav);
   window.addEventListener("scroll", () => {
     if (window.scrollY > 100) {
       handleShow(true);
@@ -19,24 +20,23 @@ const NavBar = () => {
         </Link>
       </div>
       <div className="LogOutButton">
-        {/* <i
-          style={{ color: "white", fontSize: "20px" }}
-          class="fa-solid fa-magnifying-glass"></i> */}
-        {/* <div className="carts">
-          <Link>
-            <div className="lengthCart">{cartCount.length}</div>
+        <div className="carts">
+        <Link to="/favourite">
+            <button data-count={favCount.length} className="listBtn">
             <i
               style={{ color: "white", fontSize: "20px" }}
               class="fa-regular fa-heart"></i>
+            </button>
           </Link>
-        </div> */}
+        </div>
 
         <div className="carts">
           <Link to="/Cart">
-            <div className="lengthCart">{cartCount.length}</div>
-            <i
-              class="fa-solid fa-cart-shopping"
-              style={{ color: "white", fontSize: "20px" }}></i>
+            <button data-count={cartCount.length} className="listBtn">
+              <i
+                class="fa-solid fa-cart-shopping"
+                style={{ color: "white", fontSize: "20px" }}></i>
+            </button>
           </Link>
         </div>
 

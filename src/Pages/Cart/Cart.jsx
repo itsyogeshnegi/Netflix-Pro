@@ -17,9 +17,6 @@ const Cart = () => {
   return (
     <div className="Cart">
       <OtherNavBar />
-      <div className="cartCount">
-      <h5 style={{color:"white" , marginLeft:"10px"}}>Total Cart : {cartCount.length}</h5>
-      </div>
       <div className="Cart_box">
         {products.map((product , index) => (
           <div className="cart_Movies">
