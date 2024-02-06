@@ -7,6 +7,7 @@ import { Button, Modal } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useDispatch } from "react-redux";
 import { addCart } from "../../Store/cartSlice";
+import { addFav } from "../../Store/favSlice";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 const Cards = ({ fetchURL, title }) => {
@@ -48,7 +49,12 @@ const Cards = ({ fetchURL, title }) => {
   const addTOCart = data => {
     // setCart([...cart, data]);
     dispatch(addCart(data));
-    toast.success("Add Your Movie...")
+    toast.success("Add In Your List")
+  };
+
+  const addToFav = data => {
+    dispatch(addFav(data))
+    toast.success("Add In Your Favourite")
   };
 
   if (movies.length === 0) return;
@@ -129,7 +135,7 @@ const Cards = ({ fetchURL, title }) => {
                 </h2>
               </div>
               <div className="modalButtons">
-                <Button onClick={handleClose} variant="danger">
+                <Button onClick={() => addToFav(modalData)} variant="danger">
                   Favourite <i className="fa-regular fa-heart"></i>
                 </Button>
 
