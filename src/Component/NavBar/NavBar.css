@@ -34,14 +34,14 @@ align-items: center;
 .LogOutButton{
     height: 100%;
     display: flex;
-    justify-content: space-evenly;
-    width: 15%;
-    align-items: center;
+    /* justify-content: space-evenly; */
+        width: 50%;
+        /* align-items: center; */
 }
 .carts{
     display: flex;
     /* border: 2px red solid; */
-    flex-direction: row;
+    /* flex-direction: row; */
 }
 .lengthCart{
     height: 10px;
@@ -51,7 +51,7 @@ align-items: center;
     margin-left: 1rem;
 }
 .listBtn{
- width: 40px;
+width: 40px;
  border: none;
 outline: none;
 position: relative;

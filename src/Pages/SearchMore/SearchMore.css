@@ -1,0 +1,38 @@
+.SearchMore {
+    height: 4rem;
+    width: 100%;
+    background-color: #252525;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.SearchMore input {
+    text-align: center;
+    width: 50%;
+    height: 2rem;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    display: flex;
+}
+
+.searchResults {
+    min-height: 100vh;
+    width: 100%;
+    background-color: #252525;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.searchCard {
+    height: 300px;
+    width: 200px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+}

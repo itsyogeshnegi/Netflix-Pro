@@ -89,7 +89,7 @@ const Cards = ({ fetchURL, title }) => {
                 )}
                 <button
                   type="button"
-                  class="btnModal"
+                  className="btnModal"
                   data-toggle="modal"
                   style={{
                     backgroundColor: "#3498db",

@@ -56,11 +56,11 @@ const Slider = () => {
           </h2>
           <div className="banner__buttons">
             <button className="inside_button" onClick={() => addTOCart(info)}>
-              <i class="fa-solid fa-plus"></i> Add List
+              <i className="fa-solid fa-plus"></i> Add List
             </button>
             <Link to="/cart">
               <button className="inside_button">
-                <i class="fa-solid fa-list"></i> My List
+                <i className="fa-solid fa-list"></i> My List
               </button>
             </Link>
           </div>

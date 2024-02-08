@@ -8,25 +8,30 @@ const OtherNavBar = () => {
   return (
     <div className={`nav_logos`}>
       <div className="Logonetflix">
-        <Link to="/">
+        <Link to="/Home-Page">
           <img src="/Logonetflix.png" height="90%" />
         </Link>
       </div>
       <div className="LogOutButton">
-      <Link to="/favourite">
-            <button data-count={favCount.length} className="listBtn">
+        <Link to="/Search-More-Movies">
+          <i
+            style={{ color: "white", fontSize: "20px" }}
+            class="fa-solid fa-magnifying-glass"></i>
+        </Link>
+        <Link to="/favourite">
+          <button data-count={favCount.length} className="listBtn">
             <i
               style={{ color: "white", fontSize: "20px" }}
-              class="fa-regular fa-heart"></i>
-            </button>
-          </Link>
-          <Link to="/Cart">
-            <button data-count={cartCount.length} className="listBtn">
-              <i
-                class="fa-solid fa-cart-shopping"
-                style={{ color: "white", fontSize: "20px" }}></i>
-            </button>
-          </Link>
+              className="fa-regular fa-heart"></i>
+          </button>
+        </Link>
+        <Link to="/Cart">
+          <button data-count={cartCount.length} className="listBtn">
+            <i
+              className="fa-solid fa-cart-shopping"
+              style={{ color: "white", fontSize: "20px" }}></i>
+          </button>
+        </Link>
         <img src="/user.png" height="90%" />
       </div>
     </div>

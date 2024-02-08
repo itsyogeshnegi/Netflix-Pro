@@ -12,11 +12,6 @@
     background-image: url("https://assets.nflxext.com/ffe/siteui/vlv3/5523db5a-e2b2-497f-a88b-61f175c3dbad/eb90437e-a876-47c3-a138-ca27772a4d2a/IN-en-20230306-popsignuptwoweeks-perspective_alpha_website_small.jpg");
 }
 
-.Login>h1 {
-    font-size: 50px;
-    margin-bottom: 20px;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-}
 
 .Login>form {
     padding: 50px;
@@ -24,9 +19,8 @@
     background-color: rgba(5, 5, 5, 0.9);
     display: flex;
     align-items: center;
-    /* justify-content: center; */
     flex-direction: column;
-    gap: 20px;
+    gap: 15px;
 }
 
 .Login>form>input {
@@ -48,5 +42,4 @@
     font-weight: 700;
     color: white;
     background-color: red;
-    /* color: red; */
 }

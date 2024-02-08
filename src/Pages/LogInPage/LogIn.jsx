@@ -21,27 +21,43 @@ const LogIn = () => {
       toast.warning("Fill your Password");
     } else {
       signInWithEmailAndPassword(auth, email, password)
-        .then(value => navigate("/Home Page"))
+        .then(value => navigate("/Home-Page") , toast.success("Welcome DUDE..."))
         .catch(err => toast.error("Invaild Id or Password"));
     }
   };
   return (
-    <div className='Login'>
-    <form>
-        <h1>Log In</h1>
+    <div className="Login">
+      <form>
+        <h1 style={{ fontWeight: "700", fontSize: "30px" }}>Log In</h1>
 
-        <input type="email" placeholder='Email' value={email}
-            onChange={(e) => setEmail(e.target.value)} />
+        <input
+          type="email"
+          placeholder="Email"
+          value={email}
+          onChange={e => setEmail(e.target.value)}
+        />
 
-        <input type="password" placeholder='Password' value={password}
-            onChange={(e) => setPassword(e.target.value)} />
+        <input
+          type="password"
+          placeholder="Password"
+          value={password}
+          onChange={e => setPassword(e.target.value)}
+        />
 
-        <button type="submit" onClick={handleSubmit}>SUBMIT</button>
-        <p>New to Netflix? <Link to="/Sign-Up" style={{ color: "white" }}> Sign up now</Link></p>
-    </form>
-    <ToastContainer
+        <button type="submit" onClick={handleSubmit}>
+          SUBMIT
+        </button>
+        <p>
+          New to Netflix?{" "}
+          <Link to="/Sign-Up" style={{ color: "white" }}>
+            {" "}
+            Sign up now
+          </Link>
+        </p>
+      </form>
+      <ToastContainer
         position="top-right"
-        autoClose={1000}
+        autoClose={1500}
         hideProgressBar={false}
         newestOnTop={false}
         closeOnClick
@@ -50,8 +66,8 @@ const LogIn = () => {
         draggable
         pauseOnHover
         theme="dark"
-    />
-</div>
+      />
+    </div>
   );
 };
 

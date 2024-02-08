@@ -15,17 +15,24 @@ const NavBar = () => {
   return (
     <div className={`nav_logo ${show && "nav__bar__shadow"}`}>
       <div className="Logonetflix">
-        <Link to="/">
-          <img src="/Logonetflix.png" height="90%" />
-        </Link>
+        {/* <Link to="/"> */}
+        <img src="/Logonetflix.png" height="90%" />
+        {/* </Link> */}
       </div>
       <div className="LogOutButton">
         <div className="carts">
-        <Link to="/favourite">
-            <button data-count={favCount.length} className="listBtn">
+          <Link to="/Search-More-Movies">
             <i
               style={{ color: "white", fontSize: "20px" }}
-              class="fa-regular fa-heart"></i>
+              class="fa-solid fa-magnifying-glass"></i>
+          </Link>
+        </div>
+        <div className="carts">
+          <Link to="/favourite">
+            <button data-count={favCount.length} className="listBtn">
+              <i
+                style={{ color: "white", fontSize: "20px" }}
+                class="fa-regular fa-heart"></i>
             </button>
           </Link>
         </div>

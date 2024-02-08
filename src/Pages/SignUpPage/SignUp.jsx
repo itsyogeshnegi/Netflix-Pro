@@ -50,12 +50,13 @@ const SignUp = () => {
           toast.error("Re-Enter Your Password")
       }
       else {
-          toast.success("Create Done",
+          toast.success("Create Done....",
               createUserWithEmailAndPassword(auth, email, password).then((value) => console.log("create Done")))
           push(ref(db, "User/"), {
               name, email, password
           })
           navigate("/");
+          
       };
   }
   return (
@@ -112,7 +113,7 @@ const SignUp = () => {
     </form>
     <ToastContainer
         position="top-right"
-        autoClose={1000}
+        autoClose={1500}
         hideProgressBar={false}
         newestOnTop={false}
         closeOnClick
