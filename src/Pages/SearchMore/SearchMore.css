@@ -18,13 +18,14 @@
 }
 
 .searchResults {
-    min-height: 100vh;
+    height: 80vh;
     width: 100%;
     background-color: #252525;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
+    overflow-y: auto;
 }
 
 .searchCard {

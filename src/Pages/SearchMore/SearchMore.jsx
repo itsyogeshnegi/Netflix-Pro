@@ -1,20 +1,20 @@
 import React, { useState } from "react";
+import { debounce } from "lodash";
 import "./SearchMore.css";
 import OtherNavBar from "../../Component/OtherNavBar/OtherNavBar";
 
 const SearchMore = () => {
   const API_KEY = "01119e8533d38c65e3f92ff109a11b3b";
-  let searchMovie = "https://api.themoviedb.org/3/search/movie";
   let imageURL = "https://image.tmdb.org/t/p/original";
 
-  
   const [searchTerm, setSearchTerm] = useState("");
   const [searchResults, setSearchResults] = useState([]);
 
-  const handleSearch = async () => {
+  // Debounce the handleSearch function
+  const debouncedSearch = debounce(async query => {
     try {
       const response = await fetch(
-        `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${searchTerm}&include_adult=false&language=en-US`
+        `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${query}&include_adult=false&language=en-US`
       );
       const data = await response.json();
       setSearchResults(data.results);
@@ -22,13 +22,20 @@ const SearchMore = () => {
     } catch (error) {
       console.error("Error fetching data:", error);
     }
+  }, 300); // Adjust the debounce delay as needed
+
+  const handleSearch = query => {
+    debouncedSearch(query);
   };
 
   // Trigger search when input changes
   const handleChange = e => {
-    setSearchTerm(e.target.value);
-    handleSearch(); // Call handleSearch when input changes
+    const query = e.target.value;
+    setSearchTerm(query);
+    handleSearch(query); // Call debounced handleSearch when input changes
   };
+
+  // ... (previous code)
 
   return (
     <>
@@ -44,22 +51,30 @@ const SearchMore = () => {
         />
       </div>
       <div className="searchResults">
-        {searchResults.map(result => {
-          console.log(result);
-          return (
-            <div
-              className="searchCard"
-              key={result.id}
-              style={{ color: "white" }}>
-              {/* {result.title} */}
-              <img
-                src={imageURL + result.poster_path}
-                alt={result.id}
-                style={{ width: "200px", height: "100%" }}
-              />
-            </div>
-          );
-        })}
+        {searchResults.length === 0 && searchTerm.length > 0 && (
+          <div className="noResultsMessage" style={{ color: "white" }}>
+           <h1> No results found. Please try another search.</h1>
+          </div>
+        )}
+
+        {searchResults.map(result => (
+          <div
+            className="searchCard"
+            key={result.id}
+            style={{ color: "white" }}>
+            <img
+              src={imageURL + result.poster_path}
+              alt={result.id}
+              style={{ width: "200px", height: "100%" }}
+            />
+          </div>
+        ))}
+
+        {searchTerm.length === 0 && (
+          <div className="typeSomethingMessage" style={{ color: "white" }}>
+            <h1> Please type something to search.</h1>
+          </div>
+        )}
       </div>
     </>
   );
