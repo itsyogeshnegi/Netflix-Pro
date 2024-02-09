@@ -20,13 +20,13 @@ const NavBar = () => {
         {/* </Link> */}
       </div>
       <div className="LogOutButton">
-        <div className="carts">
+        {/* <div className="carts">
           <Link to="/Search-More-Movies">
             <i
               style={{ color: "white", fontSize: "20px" }}
               class="fa-solid fa-magnifying-glass"></i>
           </Link>
-        </div>
+        </div> */}
         <div className="carts">
           <Link to="/favourite">
             <button data-count={favCount.length} className="listBtn">
