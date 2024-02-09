@@ -71,7 +71,7 @@ const Slider = () => {
             )}
           </div>
           <div className="movie_Rating" style={{ fontWeight: "600" }}>
-            Rating : {info?.vote_average}/10
+            Rating : {parseInt(info?.vote_average).toFixed(1)}/10
           </div>
         </div>
       </header>

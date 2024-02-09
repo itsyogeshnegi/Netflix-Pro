@@ -7,13 +7,14 @@ const SearchMore = () => {
   let searchMovie = "https://api.themoviedb.org/3/search/movie";
   let imageURL = "https://image.tmdb.org/t/p/original";
 
+  
   const [searchTerm, setSearchTerm] = useState("");
   const [searchResults, setSearchResults] = useState([]);
 
   const handleSearch = async () => {
     try {
       const response = await fetch(
-        `${searchMovie}?api_key=${API_KEY}&query=${searchTerm}`
+        `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${searchTerm}&include_adult=false&language=en-US`
       );
       const data = await response.json();
       setSearchResults(data.results);

@@ -75,7 +75,7 @@ const Cards = ({ fetchURL, title }) => {
                 className="myCard">
                 {poster_path ? (
                   <img
-                    src={baseURL + poster_path}
+                    src={baseURL + poster_path || backdrop_path}
                     alt={id}
                     style={{ width: "200px", height: "100%" }}
                   />
