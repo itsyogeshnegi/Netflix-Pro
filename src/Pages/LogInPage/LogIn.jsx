@@ -28,7 +28,9 @@ const LogIn = () => {
   return (
     <div className="Login">
       <form>
-        <h1 style={{ fontWeight: "700", fontSize: "30px" }}>Log In</h1>
+        <h1 style={{ fontWeight: "700", fontSize: "30px", color: "red" }}>
+          Netflix Clone
+        </h1>
 
         <input
           type="email"

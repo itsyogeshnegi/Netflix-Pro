@@ -31,12 +31,12 @@ const SignUp = () => {
       else if (atposition < 3 || dotposition < atposition + 2 || dotposition + 2 >= email.length) {
           toast.error(" Wrong Email")
       }
-      else if (phone === "") {
-          toast.error("Phone Number is Required")
-      }
-      else if (phone.length <= 9 || phone.length >= 11) {
-          toast.error("Required Length is 10")
-      }
+    //   else if (phone === "") {
+    //       toast.error("Phone Number is Required")
+    //   }
+    //   else if (phone.length <= 9 || phone.length >= 11) {
+    //       toast.error("Required Length is 10")
+    //   }
       else if (password === "") {
           toast.error("password is required")
       }
@@ -62,7 +62,7 @@ const SignUp = () => {
   return (
     <div className='signup' >
     <form>
-        <h1>Sign Up</h1>
+        <h1 style={{ fontWeight: "700", fontSize: "30px", color: "red" }}>Netflix Clone</h1>
 
         <input
             name='name'
@@ -82,14 +82,14 @@ const SignUp = () => {
             onChange={(e) => setEmail(e.target.value)}
         />
 
-        <input
+        {/* <input
             name='Phone Number'
             type="number"
             placeholder='Phone Number'
             // required
             value={phone}
             onChange={(e) => setPhone(e.target.value)}
-        />
+        /> */}
 
         <input
             name='password'
